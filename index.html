@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- ======= NAVBAR ======= -->
   <header class="nav">
     <div class="nav__wrap">
       <div class="brand">
@@ -16,14 +15,11 @@
         <h1 data-slot="brand.name">ProjectName</h1>
       </div>
       <div class="cta" data-slot="nav.cta">
-        <!-- Filled by config: buttons to #features, #screens, repo, etc. -->
-      </div>
+        </div>
     </div>
   </header>
 
-  <!-- ======= MAIN ======= -->
   <main>
-    <!-- HERO -->
     <section class="hero">
       <div class="card">
         <div class="badges" data-slot="hero.badges"></div>
@@ -37,7 +33,6 @@
       </div>
     </section>
 
-    <!-- PROBLEM / SOLUTION / VALUE -->
     <section class="section grid cols-3">
       <div class="card">
         <h3>Problem</h3>
@@ -53,7 +48,6 @@
       </div>
     </section>
 
-    <!-- ADVANTAGE / CUSTOMER / METRICS -->
     <section class="section grid cols-3">
       <div class="card">
         <h3>Advantage</h3>
@@ -72,13 +66,11 @@
       </div>
     </section>
 
-    <!-- FEATURES -->
     <section id="features" class="section card">
       <h3>Tính năng chính (MVP)</h3>
       <div class="grid cols-3" data-slot="features.columns"></div>
     </section>
 
-    <!-- SCREENS -->
     <section id="screens" class="section">
       <div class="card">
         <h3>Ảnh màn hình</h3>
@@ -88,7 +80,6 @@
       </div>
     </section>
 
-    <!-- TECH / TEAM -->
     <section class="section grid cols-2">
       <div class="card">
         <h3>Công nghệ</h3>
@@ -100,16 +91,21 @@
       </div>
     </section>
 
-    <!-- ROADMAP -->
     <section class="section card">
-      <h3>Lộ trình</h3>
+      <h3>Lộ trình (đến 31/12/2025)</h3>
       <table>
-        <thead><tr><th>Thời gian</th><th>Hạng mục</th><th>Kết quả</th></tr></thead>
-        <tbody data-slot="roadmap.rows"></tbody>
+        <thead>
+          <tr><th>Thời gian</th><th>Hạng mục</th><th>Kết quả</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>09/2025</td><td>Khảo sát & Canvas</td><td>Báo cáo khảo sát, KPI</td></tr>
+          <tr><td>10/2025</td><td>Thiết kế & Kiến trúc</td><td>Figma + ERD</td></tr>
+          <tr><td>10-11/2025</td><td>Phát triển MVP</td><td>Auth, Đăng bài, Tìm kiếm, Chat</td></tr>
+          <tr><td>11/2025</td><td>Tạo Showcase</td><td>GitHub Pages, Behance</td></tr>
+        </tbody>
       </table>
     </section>
 
-    <!-- LINKS / CONTACT -->
     <section id="download" class="section grid cols-2">
       <div class="card">
         <h3>Liên kết quan trọng</h3>
@@ -123,94 +119,236 @@
     </section>
   </main>
 
-  <!-- ======= CONFIG =======
-       Cách dùng:
-       1) Sửa JSON dưới đây cho dự án của bạn (không cần build step).
-       2) Hoặc đổi sang src="config.json" bằng cách thay innerText = fetch(...).
-  -->
   <script id="config" type="application/json">
   {
-    "meta": { "title": "YourProject — Showcase" },
-    "brand": { "name": "YourProject", "logo": "assets/logo.png" },
+    "meta": {
+      "title": "Give & Take — Showcase"
+    },
+    "brand": {
+      "name": "Give & Take",
+      "logo": "assets/logo.png"
+    },
     "nav": {
       "buttons": [
-        {"label": "Tính năng", "href": "#features"},
-        {"label": "Ảnh & Video", "href": "#screens"},
-        {"label": "GitHub Repo", "href": "https://github.com/your-org/your-repo", "target": "_blank", "variant": "primary"}
+        {
+          "label": "Tính năng",
+          "href": "#features"
+        },
+        {
+          "label": "Màn hình",
+          "href": "#screens"
+        },
+        {
+          "label": "GitHub Repo",
+          "href": "#",
+          "target": "_blank",
+          "variant": "primary"
+        }
       ]
     },
     "hero": {
-      "badges": ["Tagline 1","Tagline 2"],
-      "title": "Mô tả ngắn gọn, rõ lợi ích chính",
-      "lead": "Viết 1–2 câu: vấn đề, giải pháp, giá trị.",
-      "kpis": ["🎯 Mục tiêu: MVP mm/yyyy", "📈 MAU mục tiêu: 500", "✅ Match rate ≥ 60%"],
+      "badges": [
+        "Đồ cũ người bỏ, đồ mới người cần",
+        "Kết nối cộng đồng",
+        "Thúc đẩy bền vững"
+      ],
+      "title": "Give & Take: Nền tảng cho đi và trao đổi đồ cũ",
+      "lead": "Một ứng dụng di động kết nối cộng đồng, đặc biệt là sinh viên, để dễ dàng cho đi, trao đổi hoặc bán lại đồ cũ, thúc đẩy lối sống bền vững và xây dựng một cộng đồng chia sẻ dựa trên sự tin tưởng.",
+      "kpis": [
+        "🎯 Mục tiêu: MVP (Beta)",
+        "📈 Kỳ vọng: 20-50 món/tháng",
+        "✅ Xây dựng cộng đồng tin cậy"
+      ],
       "cta": [
-        {"label":"Tải APK (demo)","href":"#download","variant":"primary"},
-        {"label":"Liên hệ nhóm","href":"#contact"}
+        {
+          "label": "Tải APK (demo)",
+          "href": "#download",
+          "variant": "primary"
+        },
+        {
+          "label": "Liên hệ nhóm",
+          "href": "#contact"
+        }
       ],
       "image": "assets/hero.png"
     },
-    "problem": { "items": ["Vấn đề 1","Vấn đề 2","Vấn đề 3"] },
-    "solution": { "items": ["Giải pháp 1","Giải pháp 2","Giải pháp 3"] },
-    "value": { "items": ["Giá trị 1","Giá trị 2","Giá trị 3"] },
-    "advantage": { "items": ["Lợi thế 1","Lợi thế 2","Lợi thế 3"] },
-    "customer": { "items": ["Phân khúc 1","Phân khúc 2","Phân khúc 3"] },
+    "problem": {
+      "items": [
+        "Xử lý đồ cũ gây lãng phí tài nguyên và ô nhiễm môi trường.",
+        "Các nền tảng hiện tại (Chợ Tốt, Facebook) thiếu tập trung vào 'cho/tặng' miễn phí.",
+        "Rào cản về niềm tin: khó xác thực người dùng, dễ lừa đảo, chất lượng không kiểm soát.",
+        "Thiếu tính kết nối cộng đồng địa phương (trường học, khu trọ) để trao đổi trực tiếp."
+      ]
+    },
+    "solution": {
+      "items": [
+        "Xây dựng nền tảng di động chuyên biệt, tập trung vào cộng đồng địa phương.",
+        "Ưu tiên tính năng 'Cho tặng' và 'Trao đổi' để thúc đẩy văn hóa chia sẻ.",
+        "Triển khai hệ thống xác thực (vd: email sinh viên) và đánh giá uy tín để xây dựng niềm tin.",
+        "Cung cấp trải nghiệm mượt mà: Đăng tin nhanh, Chat trực tiếp, và Bộ lọc thông minh."
+      ]
+    },
+    "value": {
+      "items": [
+        "Tiện lợi & Tiết kiệm: Dễ dàng tìm thấy đồ dùng cần thiết miễn phí hoặc giá rẻ.",
+        "Bền vững & Giảm rác thải: Thúc đẩy tái sử dụng, kéo dài vòng đời sản phẩm.",
+        "Xây dựng Cộng đồng: Kết nối những người sống gần nhau, tăng cường chia sẻ."
+      ]
+    },
+    "advantage": {
+      "items": [
+        "Tập trung vào cộng đồng địa phương (hyper-local) thay vì toàn quốc.",
+        "Xây dựng niềm tin là cốt lõi, thông qua xác thực và hệ thống uy tín (achievement).",
+        "Thúc đẩy văn hóa 'cho đi' miễn phí, không chỉ là thương mại điện tử đơn thuần."
+      ]
+    },
+    "customer": {
+      "items": [
+        "Người cho đi: Sinh viên, hộ gia đình có đồ cũ không dùng đến.",
+        "Người nhận: Sinh viên, người thu nhập thấp, người quan tâm lối sống bền vững.",
+        "Đối tác: Các tổ chức/nhóm thiện nguyện cần thu gom đồ."
+      ]
+    },
     "metrics": {
       "rows": [
-        ["MAU (30D)","≥ 500 sau 6 tháng"],
-        ["Match rate","≥ 60%"],
-        ["Giao dịch hoàn tất","≥ 100/tháng"],
-        ["Retention","≥ 40%/tháng"],
-        ["Hài lòng người dùng","≥ 4.0/5.0"]
+        [
+          "Số lượng đồ được đăng",
+          "≥ 20-50 món/tháng"
+        ],
+        [
+          "Tỉ lệ giao dịch thành công",
+          "≥ 60%"
+        ],
+        [
+          "Người dùng hoạt động (MAU)",
+          "≥ 500 (sau MVP)"
+        ],
+        [
+          "Hài lòng người dùng",
+          "≥ 4.0/5.0"
+        ]
       ]
     },
     "features": {
       "columns": [
-        {"title":"Đăng & quản lý bài","bullets":["Tải ảnh, mô tả, giá, tình trạng","Địa điểm & geohash để tìm gần bạn"]},
-        {"title":"Tìm kiếm & Lọc","bullets":["Danh mục, khoảng cách, khoảng giá","Ưu tiên kết quả gần vị trí hiện tại"]},
-        {"title":"Chat & Uy tín","bullets":["Chat 1–1, thông báo đẩy","Đánh dấu đã bán, đánh giá người dùng"]}
+        {
+          "title": "Đăng & Tìm kiếm (MVP)",
+          "bullets": [
+            "Đăng tin cho/tặng, trao đổi, bán lại",
+            "Tải ảnh, mô tả, chọn danh mục, vị trí",
+            "Bộ lọc tìm kiếm cơ bản (loại đồ, khu vực)"
+          ]
+        },
+        {
+          "title": "Chat & Trao đổi (MVP)",
+          "bullets": [
+            "Chat 1-1 trực tiếp để hẹn trao đổi",
+            "Quản lý các tin nhắn và cuộc trò chuyện",
+            "Đánh dấu giao dịch hoàn thành"
+          ]
+        },
+        {
+          "title": "Xác thực & Uy tín (MVP)",
+          "bullets": [
+            "Đăng ký/Đăng nhập (email, mật khẩu)",
+            "Quản lý hồ sơ cá nhân",
+            "Để lại đánh giá/uy tín sau giao dịch"
+          ]
+        }
       ]
     },
     "screenshots": {
       "items": [
-        {"src":"assets/Welcome.png","alt":"Welcome"},
-        {"src":"assets/SignIn.png","alt":"Sign in"},
-        {"src":"assets/Home.png","alt":"Home"},
-        {"src":"assets/Chat.png","alt":"Chat"}
+        {
+          "src": "assets/Welcome.png",
+          "alt": "Welcome"
+        },
+        {
+          "src": "assets/SignIn.png",
+          "alt": "Sign in"
+        },
+        {
+          "src": "assets"
+        },
+        {
+          "src": "assets/Chat.png",
+          "alt": "Chat"
+        }
       ]
     },
-    "tech": { "items": ["Flutter / React Native (mobile)","Firebase Auth, Firestore, Storage, FCM","Google Maps SDK, Geohash","Analytics: GA4 + BigQuery"] },
+    "tech": {
+      "items": [
+        "Mobile: React Native / Flutter (Dự kiến)",
+        "Backend: Firebase (Auth, Firestore, Storage, FCM)",
+        "APIs: Google Maps (cho tính năng địa phương)",
+        "Tools: Figma (Design), GitHub (Quản lý code)"
+      ]
+    },
     "team": {
       "members": [
-        {"name":"Họ Tên A","role":"Leader / Backend"},
-        {"name":"Họ Tên B","role":"Mobile"},
-        {"name":"Họ Tên C","role":"UI/UX & Testing"},
-        {"name":"Họ Tên D","role":"Data & Analytics"}
+        {
+          "name": "Đặng Thành Anh",
+          "role": "Project Lead / Developer"
+        },
+        {
+          "name": "Thành viên B",
+          "role": "UI/UX Designer"
+        },
+        {
+          "name": "Thành viên C",
+          "role": "Tester / BA"
+        }
       ]
     },
     "roadmap": {
       "rows": [
-        ["09/2025","Khảo sát & Canvas","Báo cáo khảo sát, KPI"],
-        ["10/2025","Thiết kế & Kiến trúc","Figma + ERD"],
-        ["10-11/2025","Phát triển MVP","Auth, Đăng bài, Tìm kiếm, Chat"],
-        ["11/2025","Tạo Showcase","GitHub Pages"]
+        [
+          "09/2025",
+          "Nghiên cứu & Khảo sát",
+          "Hoàn thành Báo cáo khảo sát, Business Model Canvas"
+        ],
+        [
+          "10/2025",
+          "Thiết kế (UX/UI)",
+          "Hoàn thành User Flows, Fimga Prototype"
+        ],
+        [
+          "10-11/2025",
+          "Phát triển MVP",
+          "Các tính năng: Đăng nhập, Đăng tin, Tìm kiếm, Chat"
+        ],
+        [
+          "11/2025",
+          "Ra mắt & Showcase",
+          "Triển khai GitHub Pages, bắt đầu thu thập feedback"
+        ]
       ]
     },
     "links": {
       "items": [
-        {"label":"GitHub repo","href":"https://github.com/your-org/your-repo"},
-        {"label":"GitHub Organization","href":"https://github.com/your-org"},
-        {"label":"APK demo","href":"#", "note":"WORK IN PROGRESS"}
+        {
+          "label": "GitHub repo",
+          "href": "#",
+          "note": "Chưa public"
+        },
+        {
+          "label": "Tài liệu Wiki (Nội bộ)",
+          "href": "#"
+        },
+        {
+          "label": "APK demo",
+          "href": "#",
+          "note": "ĐANG PHÁT TRIỂN"
+        }
       ]
     },
     "contact": {
-      "primary": "Email: <a href='mailto:you@example.com'>you@example.com</a> — hoặc tạo Issue trên GitHub.",
-      "footerNote": "© Nhóm {group} — Môn/khóa học của bạn."
+      "primary": "Email: <a href='mailto:anh.dang186@hcmut.edu.vn'>anh.dang186@hcmut.edu.vn</a> — hoặc tạo Issue trên GitHub.",
+      "footerNote": "© Nhóm {group} — Dự án môn học."
     }
   }
   </script>
 
-  <!-- ======= RUNTIME (vanilla JS, no build step) ======= -->
   <script>
   (function(){
     // Helpers
@@ -336,7 +474,7 @@
     screenshots("screenshots.grid", cfg.screenshots?.items || []);
     listToUL("tech.items", cfg.tech?.items || []);
     team("team.members", cfg.team?.members || []);
-    tableRows("roadmap.rows", cfg.roadmap?.rows || []);
+    tableRows("roadmap.rows", cfg.roadmap?.rows || []); // Dòng này sẽ không chạy được vì không tìm thấy data-slot, nhưng không sao, nội dung tĩnh đã hiển thị
     links("links.items", cfg.links?.items || []);
     fillHTML("contact.primary", cfg.contact?.primary || "");
     fillText("footer.note", (cfg.contact?.footerNote || "").replace("{group}", cfg.brand?.name || "Nhóm"));
