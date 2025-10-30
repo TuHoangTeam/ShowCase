@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-slot="meta.title">Project — Showcase</title>
+  <meta name="description" content="One‑page showcase template cho các nhóm sinh viên. Điền cấu hình trong thẻ <script id='config'> phía dưới hoặc thay bằng file JSON của bạn.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- ======= NAVBAR ======= -->
+  <header class="nav">
+    <div class="nav__wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true" data-slot="brand.logo"></div>
+        <h1 data-slot="brand.name">ProjectName</h1>
+      </div>
+      <div class="cta" data-slot="nav.cta">
+        <!-- Filled by config: buttons to #features, #screens, repo, etc. -->
+      </div>
+    </div>
+  </header>
+
+  <!-- ======= MAIN ======= -->
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="card">
+        <div class="badges" data-slot="hero.badges"></div>
+        <h2 data-slot="hero.title">Tiêu đề dự án</h2>
+        <p class="lead" data-slot="hero.lead">Mô tả ngắn gọn về sản phẩm: tập trung vào giá trị và đối tượng.</p>
+        <div class="kpi" data-slot="hero.kpis"></div>
+        <div class="foot" data-slot="hero.cta"></div>
+      </div>
+      <div class="media">
+        <img src="" alt="App mockup" style="width:100%;border-radius:14px;box-shadow:var(--shadow);" data-slot="hero.image">
+      </div>
+    </section>
+
+    <!-- PROBLEM / SOLUTION / VALUE -->
+    <section class="section grid cols-3">
+      <div class="card">
+        <h3>Problem</h3>
+        <ul data-slot="problem.items"></ul>
+      </div>
+      <div class="card">
+        <h3>Solution</h3>
+        <ul data-slot="solution.items"></ul>
+      </div>
+      <div class="card">
+        <h3>Value</h3>
+        <ul data-slot="value.items"></ul>
+      </div>
+    </section>
+
+    <!-- ADVANTAGE / CUSTOMER / METRICS -->
+    <section class="section grid cols-3">
+      <div class="card">
+        <h3>Advantage</h3>
+        <ul data-slot="advantage.items"></ul>
+      </div>
+      <div class="card">
+        <h3>Customer / User</h3>
+        <ul data-slot="customer.items"></ul>
+      </div>
+      <div class="card">
+        <h3>Metrics (KPI)</h3>
+        <table>
+          <thead><tr><th>Chỉ số</th><th>Mục tiêu</th></tr></thead>
+          <tbody data-slot="metrics.rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section card">
+      <h3>Tính năng chính (MVP)</h3>
+      <div class="grid cols-3" data-slot="features.columns"></div>
+    </section>
+
+    <!-- SCREENS -->
+    <section id="screens" class="section">
+      <div class="card">
+        <h3>Ảnh màn hình</h3>
+        <div style="max-width: 1000px; margin: 0 auto">
+          <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:16px" data-slot="screenshots.grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH / TEAM -->
+    <section class="section grid cols-2">
+      <div class="card">
+        <h3>Công nghệ</h3>
+        <ul data-slot="tech.items"></ul>
+      </div>
+      <div class="card">
+        <h3>Nhóm</h3>
+        <ul data-slot="team.members"></ul>
+      </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section class="section card">
+      <h3>Lộ trình</h3>
+      <table>
+        <thead><tr><th>Thời gian</th><th>Hạng mục</th><th>Kết quả</th></tr></thead>
+        <tbody data-slot="roadmap.rows"></tbody>
+      </table>
+    </section>
+
+    <!-- LINKS / CONTACT -->
+    <section id="download" class="section grid cols-2">
+      <div class="card">
+        <h3>Liên kết quan trọng</h3>
+        <ul data-slot="links.items"></ul>
+      </div>
+      <div id="contact" class="card">
+        <h3>Liên hệ</h3>
+        <p data-slot="contact.primary"></p>
+        <p class="muted" data-slot="footer.note"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======= CONFIG =======
+       Cách dùng:
+       1) Sửa JSON dưới đây cho dự án của bạn (không cần build step).
+       2) Hoặc đổi sang src="config.json" bằng cách thay innerText = fetch(...).
+  -->
+  <script id="config" type="application/json">
+  {
+    "meta": { "title": "YourProject — Showcase" },
+    "brand": { "name": "YourProject", "logo": "assets/logo.png" },
+    "nav": {
+      "buttons": [
+        {"label": "Tính năng", "href": "#features"},
+        {"label": "Ảnh & Video", "href": "#screens"},
+        {"label": "GitHub Repo", "href": "https://github.com/your-org/your-repo", "target": "_blank", "variant": "primary"}
+      ]
+    },
+    "hero": {
+      "badges": ["Tagline 1","Tagline 2"],
+      "title": "Mô tả ngắn gọn, rõ lợi ích chính",
+      "lead": "Viết 1–2 câu: vấn đề, giải pháp, giá trị.",
+      "kpis": ["🎯 Mục tiêu: MVP mm/yyyy", "📈 MAU mục tiêu: 500", "✅ Match rate ≥ 60%"],
+      "cta": [
+        {"label":"Tải APK (demo)","href":"#download","variant":"primary"},
+        {"label":"Liên hệ nhóm","href":"#contact"}
+      ],
+      "image": "assets/hero.png"
+    },
+    "problem": { "items": ["Vấn đề 1","Vấn đề 2","Vấn đề 3"] },
+    "solution": { "items": ["Giải pháp 1","Giải pháp 2","Giải pháp 3"] },
+    "value": { "items": ["Giá trị 1","Giá trị 2","Giá trị 3"] },
+    "advantage": { "items": ["Lợi thế 1","Lợi thế 2","Lợi thế 3"] },
+    "customer": { "items": ["Phân khúc 1","Phân khúc 2","Phân khúc 3"] },
+    "metrics": {
+      "rows": [
+        ["MAU (30D)","≥ 500 sau 6 tháng"],
+        ["Match rate","≥ 60%"],
+        ["Giao dịch hoàn tất","≥ 100/tháng"],
+        ["Retention","≥ 40%/tháng"],
+        ["Hài lòng người dùng","≥ 4.0/5.0"]
+      ]
+    },
+    "features": {
+      "columns": [
+        {"title":"Đăng & quản lý bài","bullets":["Tải ảnh, mô tả, giá, tình trạng","Địa điểm & geohash để tìm gần bạn"]},
+        {"title":"Tìm kiếm & Lọc","bullets":["Danh mục, khoảng cách, khoảng giá","Ưu tiên kết quả gần vị trí hiện tại"]},
+        {"title":"Chat & Uy tín","bullets":["Chat 1–1, thông báo đẩy","Đánh dấu đã bán, đánh giá người dùng"]}
+      ]
+    },
+    "screenshots": {
+      "items": [
+        {"src":"assets/Welcome.png","alt":"Welcome"},
+        {"src":"assets/SignIn.png","alt":"Sign in"},
+        {"src":"assets/Home.png","alt":"Home"},
+        {"src":"assets/Chat.png","alt":"Chat"}
+      ]
+    },
+    "tech": { "items": ["Flutter / React Native (mobile)","Firebase Auth, Firestore, Storage, FCM","Google Maps SDK, Geohash","Analytics: GA4 + BigQuery"] },
+    "team": {
+      "members": [
+        {"name":"Họ Tên A","role":"Leader / Backend"},
+        {"name":"Họ Tên B","role":"Mobile"},
+        {"name":"Họ Tên C","role":"UI/UX & Testing"},
+        {"name":"Họ Tên D","role":"Data & Analytics"}
+      ]
+    },
+    "roadmap": {
+      "rows": [
+        ["09/2025","Khảo sát & Canvas","Báo cáo khảo sát, KPI"],
+        ["10/2025","Thiết kế & Kiến trúc","Figma + ERD"],
+        ["10-11/2025","Phát triển MVP","Auth, Đăng bài, Tìm kiếm, Chat"],
+        ["11/2025","Tạo Showcase","GitHub Pages"]
+      ]
+    },
+    "links": {
+      "items": [
+        {"label":"GitHub repo","href":"https://github.com/your-org/your-repo"},
+        {"label":"GitHub Organization","href":"https://github.com/your-org"},
+        {"label":"APK demo","href":"#", "note":"WORK IN PROGRESS"}
+      ]
+    },
+    "contact": {
+      "primary": "Email: <a href='mailto:you@example.com'>you@example.com</a> — hoặc tạo Issue trên GitHub.",
+      "footerNote": "© Nhóm {group} — Môn/khóa học của bạn."
+    }
+  }
+  </script>
+
+  <!-- ======= RUNTIME (vanilla JS, no build step) ======= -->
+  <script>
+  (function(){
+    // Helpers
+    const $ = (sel) => document.querySelector(sel);
+    const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+    function fillText(slot, text) {
+      const el = document.querySelector(`[data-slot="${slot}"]`);
+      if (el && text != null) el.textContent = text;
+    }
+
+    function fillHTML(slot, html) {
+      const el = document.querySelector(`[data-slot="${slot}"]`);
+      if (el && html != null) el.innerHTML = html;
+    }
+
+    function fillImage(slot, src, alt) {
+      const el = document.querySelector(`[data-slot="${slot}"]`);
+      if (el && src) { el.src = src; if (alt) el.alt = alt; }
+    }
+
+    function listToUL(slot, items) {
+      const ul = document.querySelector(`[data-slot="${slot}"]`);
+      if (!ul || !Array.isArray(items)) return;
+      ul.innerHTML = items.map(li => `<li>${li}</li>`).join("");
+    }
+
+    function chips(slot, items) {
+      const wrap = document.querySelector(`[data-slot="${slot}"]`);
+      if (!wrap || !Array.isArray(items)) return;
+      wrap.innerHTML = items.map(t => `<div class="chip">${t}</div>`).join("");
+    }
+
+    function badges(slot, items) {
+      const wrap = document.querySelector(`[data-slot="${slot}"]`);
+      if (!wrap || !Array.isArray(items)) return;
+      wrap.innerHTML = items.map(t => `<span class="badge">${t}</span>`).join("");
+    }
+
+    function tableRows(slot, rows) {
+      const tbody = document.querySelector(`[data-slot="${slot}"]`);
+      if (!tbody || !Array.isArray(rows)) return;
+      tbody.innerHTML = rows.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join("");
+    }
+
+    function featuresCols(slot, cols) {
+      const grid = document.querySelector(`[data-slot="${slot}"]`);
+      if (!grid || !Array.isArray(cols)) return;
+      grid.innerHTML = cols.map(c => `
+        <div>
+          <p class="pill">${c.title ?? ""}</p>
+          <ul>${(c.bullets||[]).map(b=>`<li>${b}</li>`).join("")}</ul>
+        </div>
+      `).join("");
+    }
+
+    function screenshots(slot, items) {
+      const grid = document.querySelector(`[data-slot="${slot}"]`);
+      if (!grid || !Array.isArray(items)) return;
+      grid.innerHTML = items.map(i => `<img src="${i.src}" alt="${i.alt||""}" class="media">`).join("");
+    }
+
+    function links(slot, items) {
+      const ul = document.querySelector(`[data-slot="${slot}"]`);
+      if (!ul || !Array.isArray(items)) return;
+      ul.innerHTML = items.map(i => {
+        const note = i.note ? ` — <span class="muted">${i.note}</span>` : "";
+        return `<li>${i.label}: <a href="${i.href}" target="_blank" rel="noopener">${i.href}</a>${note}</li>`;
+      }).join("");
+    }
+
+    function team(slot, members) {
+      const ul = document.querySelector(`[data-slot="${slot}"]`);
+      if (!ul || !Array.isArray(members)) return;
+      ul.innerHTML = members.map(m => `<li><b>${m.name}</b> — ${m.role || ""}</li>`).join("");
+    }
+
+    function navButtons(slot, buttons) {
+      const wrap = document.querySelector(`[data-slot="${slot}"]`);
+      if (!wrap || !Array.isArray(buttons)) return;
+      wrap.innerHTML = buttons.map(b => {
+        const cls = `btn ${b.variant === 'primary' ? 'primary' : ''}`;
+        const tgt = b.target ? ` target="${b.target}" rel="noopener"` : "";
+        return `<a class="${cls}" href="${b.href}"${tgt}>${b.label}</a>`;
+      }).join("");
+    }
+
+    // Read config JSON (inline). If you want to fetch external config.json, replace below.
+    let cfg = {};
+    try { cfg = JSON.parse(document.getElementById('config').textContent); }
+    catch(e){ console.warn("Config JSON invalid", e); cfg = {}; }
+
+    // THEME (optional) via cfg.theme
+    if (cfg.theme && typeof cfg.theme === 'object') {
+      const root = document.documentElement;
+      Object.entries(cfg.theme).forEach(([k,v]) => root.style.setProperty(k, v));
+    }
+
+    // META & BRAND
+    if (cfg.meta?.title) { document.title = cfg.meta.title; fillText("meta.title", cfg.meta.title); }
+    fillText("brand.name", cfg.brand?.name || "ProjectName");
+    if (cfg.brand?.logo) { document.querySelector('[data-slot="brand.logo"]').style.backgroundImage = `url('${cfg.brand.logo}')`; }
+
+    // NAV
+    navButtons("nav.cta", cfg.nav?.buttons || []);
+
+    // HERO
+    badges("hero.badges", cfg.hero?.badges || []);
+    fillText("hero.title", cfg.hero?.title || "Tiêu đề dự án");
+    fillText("hero.lead", cfg.hero?.lead || "");
+    chips("hero.kpis", cfg.hero?.kpis || []);
+    navButtons("hero.cta", cfg.hero?.cta || []);
+    fillImage("hero.image", cfg.hero?.image || "", "App mockup");
+
+    // SECTIONS
+    listToUL("problem.items", cfg.problem?.items || []);
+    listToUL("solution.items", cfg.solution?.items || []);
+    listToUL("value.items", cfg.value?.items || []);
+    listToUL("advantage.items", cfg.advantage?.items || []);
+    listToUL("customer.items", cfg.customer?.items || []);
+    tableRows("metrics.rows", cfg.metrics?.rows || []);
+    featuresCols("features.columns", cfg.features?.columns || []);
+    screenshots("screenshots.grid", cfg.screenshots?.items || []);
+    listToUL("tech.items", cfg.tech?.items || []);
+    team("team.members", cfg.team?.members || []);
+    tableRows("roadmap.rows", cfg.roadmap?.rows || []);
+    links("links.items", cfg.links?.items || []);
+    fillHTML("contact.primary", cfg.contact?.primary || "");
+    fillText("footer.note", (cfg.contact?.footerNote || "").replace("{group}", cfg.brand?.name || "Nhóm"));
+  })();
+  </script>
+</body>
+</html>
